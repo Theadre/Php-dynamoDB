@@ -34,8 +34,8 @@ $marshaler = new Marshaler();
 //Expression attribute values
 $eav = $marshaler->marshalJson('
     {
-        ":start_yr": 1950,
-        ":end_yr": 1959
+        ":start_yr": 2017,
+        ":end_yr": 2019
     }
 ');
 
@@ -56,8 +56,10 @@ try {
         foreach ($result['Items'] as $i) {
             $movie = $marshaler->unmarshalItem($i);
             echo $movie['year'] . ': ' . $movie['title'];
-            echo ' ... ' . $movie['info']['rating']
-                . "\n";
+            if (!isset($movie['info']['rating'])) {
+                echo " ... pas de note ". "\n";}
+            else {echo ' ... ' . $movie['info']['rating']
+                . "\n";}
         }
 
         if (isset($result['LastEvaluatedKey'])) {

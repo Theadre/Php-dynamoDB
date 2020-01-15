@@ -34,7 +34,7 @@ $tableName = 'JeremyTaswinMovies';
 
 $eav = $marshaler->marshalJson('
     {
-        ":yyyy": 1985 
+        ":yyyy": 2019 
     }
 ');
 
@@ -45,7 +45,7 @@ $params = [
     'ExpressionAttributeValues'=> $eav
 ];
 
-echo "Querying for movies from 1985.\n";
+echo "Querying for movies from 2019.\n";
 
 try {
     $result = $dynamodb->query($params);

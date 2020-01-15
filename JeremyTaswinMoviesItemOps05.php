@@ -32,8 +32,8 @@ $marshaler = new Marshaler();
 
 $tableName = 'JeremyTaswinMovies';
 
-$year = 2015;
-$title = 'The Big New Movie';
+$year = 2019;
+$title = 'Avengers: Endgame';
 
 $key = $marshaler->marshalJson('
     {
@@ -44,7 +44,7 @@ $key = $marshaler->marshalJson('
 
 $eav = $marshaler->marshalJson('
     {
-        ":num": 3
+        ":num": 7
     }
 ');
 
@@ -52,7 +52,7 @@ $params = [
     'TableName' => $tableName,
     'Key' => $key,
     'UpdateExpression' => 'remove info.actors[0]',
-    'ConditionExpression'=>"size(info.actors) >= :num",
+    'ConditionExpression' => 'size(info.actors) >= :num',
     'ExpressionAttributeValues'=> $eav,
     'ReturnValues' => 'UPDATED_NEW'
 ];

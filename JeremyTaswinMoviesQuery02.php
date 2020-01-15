@@ -34,7 +34,7 @@ $tableName = 'JeremyTaswinMovies';
 
 $eav = $marshaler->marshalJson('
     {
-        ":yyyy":1992,
+        ":yyyy":2014,
         ":letter1": "A",
         ":letter2": "L"
     }
@@ -49,7 +49,7 @@ $params = [
     'ExpressionAttributeValues'=> $eav
 ];
 
-echo "Querying for movies from 1992 - titles A-L, with genres and lead actor\n";
+echo "Querying for movies from 2014 - titles A-L, with genres and lead actor\n";
 
 try {
     $result = $dynamodb->query($params);

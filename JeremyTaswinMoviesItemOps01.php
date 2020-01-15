@@ -32,16 +32,16 @@ $marshaler = new Marshaler();
 
 $tableName = 'JeremyTaswinMovies';
 
-$year = 2015;
-$title = 'The Big New Movie';
+$year = 2019;
+$title = 'Avengers: Endgame';
 
 $item = $marshaler->marshalJson('
     {
         "year": ' . $year . ',
         "title": "' . $title . '",
         "info": {
-            "plot": "Nothing happens at all.",
-            "rating": 0
+            "plot": "Le Titan Thanos, ayant réussi à s\'approprier les six Pierres d\'Infinité et à les réunir sur le Gantelet doré, a pu réaliser son objectif de pulvériser la moitié de la population de l\'Univers",
+            "rating": 4.2
         }
     }
 ');

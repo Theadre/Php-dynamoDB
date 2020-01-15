@@ -32,19 +32,20 @@ $marshaler = new Marshaler();
 
 $tableName = 'JeremyTaswinMovies';
 
-$year = 2015;
-$title = 'The Big New Movie';
+$year = 2019;
+$title = 'Avengers: Endgame';
 
 $key = $marshaler->marshalJson('
     {
         "year": ' . $year . ', 
         "title": "' . $title . '"
+        
     }
 ');
 
 $eav = $marshaler->marshalJson('
     {
-        ":val": 5 
+        ":val": 4 
     }
 ');
 
